@@ -1,0 +1,62 @@
+{
+	"app": [
+		{
+			"appCode": "app92757262",
+			"appId": 1,
+			"appName": "app名称",
+			"bLocalApp": true,
+			"color": "bg-green",
+			"imgPath": "public/images/application-default.png",
+			"name": "基本设置",
+			"rootUrl": "app/app92757262/",
+			"settingUrl": "app/app92757262/",
+			"type": "app",
+			"details": "详细描述"
+		}
+	],
+	"dataCollect": [
+		{
+			"appCode": "app92757262",
+			"appId": 1,
+			"appName": "app名称",
+			"bLocalApp": true,
+			"color": "bg-green",
+			"imgPath": "public/images/application-default.png",
+			"name": "名称",
+			"rootUrl": "app/app92757262/",
+			"settingUrl": "app/app92757262/",
+			"type": "app",
+			"details": "详细描述"
+		}
+	],
+	"dataReport": [
+		{
+			"appCode": "app92757262",
+			"appId": 1,
+			"appName": "app名称",
+			"bLocalApp": true,
+			"color": "bg-green",
+			"imgPath": "public/images/application-default.png",
+			"name": "名称",
+			"rootUrl": "app/app92757262/",
+			"settingUrl": "app/app92757262/",
+			"type": "app",
+			"details": "详细描述"
+		}
+	],
+	"base": [
+		{
+			"appCode": "app92757262",
+			"appId": 1,
+			"appName": "app名称",
+			"bLocalApp": true,
+			"color": "bg-green",
+			"imgPath": "public/images/application-default.png",
+			"name": "名称",
+			"rootUrl": "app/app92757262/",
+			"settingUrl": "app/app92757262/",
+			"type": "app",
+			"details": "详细描述"
+		}
+	]
+}

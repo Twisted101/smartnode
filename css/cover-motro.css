@@ -1,0 +1,29 @@
+header .d-menu .dropdown-toggle:before {
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	left: 25%;
+	border-color: #727272;
+}
+
+header .d-menu .dropdown-toggle.active-toggle:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transition-property: transform;
+}
+
+.modal-body div.input-control{
+	display: block;
+	width: 90%;
+	margin-left: auto;
+}
+
+.modal-body div.input-control label{
+	display: inline-block;
+	position: initial;
+	width: 20%;
+}
+
+.modal-body div.input-control input{
+	display: inline-block;
+	width: 60%;
+}

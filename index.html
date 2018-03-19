@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/modal.css" />
+		<link rel="stylesheet" href="css/metro.css" />
+		<!--<link rel="stylesheet" href="css/metro2.css" />-->
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/mobile-media.css" />
+		<link rel="stylesheet" href="css/cover-motro.css" />
+		<link rel="stylesheet" href="css/colorpicker.css" />
+
+		<title>节点服务器</title>
+	</head>
+
+	<body>
+		<div class="modal" id="themeModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">主题设置</h4>
+					</div>
+					<div class="modal-body">
+						<div class="">
+							<div class=" " style="margin-top: 100px" id="colorpicker">
+								<div>
+									<label for="tbColor">导航条颜色</label>
+									<input type="text" id="tbColor" value="rgb(10,153,209)" spellcheck="false" />
+								</div>
+							</div>
+						</div>
+						<div>
+							<h5>背景图片</h5>
+							<div class="bg">
+								<div class="bg1 tile"></div>
+								<div class="bg2 tile"></div>
+								<div class="bg3 tile"></div>
+								<div class="bg4 tile"></div>
+								<div class="bg5 tile"></div>
+								<div class="bg6 tile"></div>
+								<div class="bg7 tile"></div>
+								<div class="bg8 tile"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button danger" data-dismiss="modal">关闭</button>
+						<button type="button" class="button info">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		//手机
+		<div class="modal" id="phoneModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">修改手机号</h4>
+					</div>
+					<div class="modal-body">
+						<div class="input-control email">
+							<label>新手机号:</label>
+							<input type="text">
+						</div>
+						<div class="input-control email error">
+							<label>确认手机号:</label>
+							<input type="text">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button danger" data-dismiss="modal">关闭</button>
+						<button type="button" class="button info">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		//密码
+		<div class="modal" id="passwordModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">修改密码</h4>
+					</div>
+					<div class="modal-body">
+						<div class="input-control">
+							<label>旧密码:</label>
+							<input type="password" data-bind="value:passwordItem.oldPW">
+						</div>
+						<div class="input-control">
+							<label>新密码:</label>
+							<input type="password" data-bind="value:passwordItem.newPW">
+						</div>
+						<div class="input-control">
+							<label>确认新密码:</label>
+							<input type="password" data-bind="value:passwordItem.confirmPW">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button danger" data-dismiss="modal">关闭</button>
+						<button type="button" class="button info">确认</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		//邮箱
+		<div class="modal" id="emailModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">修改邮箱</h4>
+					</div>
+					<div class="modal-body">
+						<div class="input-control email" data-bind="css:{error:emailItem.newEmail.hasError}">
+							<label>新邮箱:</label>
+							<input type="email" class="text-muted" data-bind="value:emailItem.newEmail, valueUpdate: 'blur',attr:{title:emailItem.newEmail.vMsg}">
+						</div>
+						<div class="input-control email" data-bind="css:{error:emailItem.confirmNewEmail.hasError}">
+							<label>确认新邮箱:</label>
+							<input type="email" data-bind="value:emailItem.confirmNewEmail,valueUpdate:'blur',attr:{title:emailItem.confirmNewEmail.vMsg">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="button danger" data-dismiss="modal">关闭</button>
+						<button type="button" class="button" data-bind="css:{disabled:!emailIsValide(),info:emailIsValide()}">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<header>
+			<h1 class="header-title">SmartNode</h1>
+			<a class="menu"><i class="iconfont menu-icon"></i></a>
+			<a class="user"><i class="iconfont user-icon"></i></a>
+			<div class="user-name">
+				<span>管理员</span>
+			</div>
+			<ul class="header-ul user-ul d-menu">
+				<li data-toggle="modal" data-target="#themeModal">
+					<a><i class="iconfont setting-icon"></i>主题设置</a>
+				</li>
+				<li>
+					<a href="" class="dropdown-toggle"><i class="iconfont user-icon"></i>修改账户</a>
+					<ul class="d-menu context drop-left" data-role="dropdown">
+						<li data-bind="click:openEmailModal">
+							<a><i class="iconfont email-icon"></i>修改邮箱</a>
+						</li>
+						<li data-bind="click:openPhoneModal">
+							<a><i class="iconfont tel-icon"></i>修改手机号</a>
+						</li>
+						<li data-bind="click:openPasswordModal">
+							<a><i class="iconfont password-icon"></i>修改密码</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href=""><i class="iconfont user-icon"></i>注销</a>
+				</li>
+			</ul>
+			<ul class="header-ul menu-ul d-menu">
+				<li>
+					<a href=""><i class="iconfont menu-icon"></i>重启服务</a>
+				</li>
+				<li>
+					<a href=""><i class="iconfont menu-icon"></i>重启服务</a>
+				</li>
+			</ul>
+		</header>
+
+		<div class="tile-area" id="container">
+			<div class="tile-group">
+				<h3 class="title">基本设置</h3>
+				<div class="tile-container">
+					<div class="tile tile-wide bg-cyan fg-white" data-role="tile">
+						<div class="tile-content">
+							<div class="image-container">
+								<div class="frames">
+									<img src="img/1.png">
+								</div>
+								<div class="image-overlay">
+									<p>
+										此处介绍该模块的功能，此处介绍该模块的功能，此处介绍该模块的功能此处介绍该模块的功能。
+									</p>
+								</div>
+							</div>
+							<div class="tile-label">系统服务</div>
+						</div>
+					</div>
+					<div class="tile bg-cyan fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-badge bg-darkRed">1</span>
+							<span class="tile-label">设备模板</span>
+						</div>
+					</div>
+					<div class="tile bg-cyan fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-badge bg-darkRed">3</span>
+							<span class="tile-label">设备管理</span>
+						</div>
+					</div>
+					<div class="tile bg-cyan fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-badge bg-darkRed">1</span>
+							<span class="tile-label">系统管理</span>
+						</div>
+					</div>
+					<div class="tile fg-white bg-cyan" data-role="tile">
+						<div class="tile-content slide-down-2 ">
+							<div class="slide">
+								<div class="image-container image-format-square" style="width: 100%;">
+									<div class="frames">
+										<img src="img/1.png">
+									</div>
+								</div>
+							</div>
+							<div class="slide-over bg-blue text-small padding10">
+								此处是系统管理模块的说明说明说明说明说明此处是系统管理模块的说明说明说明说明说明。此处是系统管理模块的说明说明说明说明说明。
+							</div>
+							<div class="tile-label">系统管理</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="tile-group">
+				<h3 class="title">采集服务</h3>
+				<div class="tile-container">
+					<div class="tile tile-wide bg-orange fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">瑞斯康路灯控制器</span>
+						</div>
+					</div>
+					<div class="tile tile-wide bg-orange fg-white" data-role="tile">
+						<div class="tile-content">
+							<div class="image-container">
+								<div class="frames">
+									<img src="img/1.png">
+								</div>
+								<div class="image-overlay">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+									</p>
+								</div>
+							</div>
+							<div class="tile-label">智能物联网协议</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tile-group">
+				<h3 class="title">数据服务</h3>
+				<div class="tile-container">
+					<div class="tile tile-wide bg-lime fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">FrontView</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tile-group">
+				<h3 class="title">基本应用</h3>
+				<div class="tile-container">
+					<div class="tile bg-lightRed fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">预付费</span>
+						</div>
+					</div>
+					<div class="tile bg-lightRed fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">空调集控系统</span>
+						</div>
+					</div>
+					<div class="tile bg-lightRed fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">SmartAC2000</span>
+						</div>
+					</div>
+					<div class="tile bg-lightRed fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">SmartLCU100</span>
+						</div>
+					</div>
+					<div class="tile bg-red fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">科陆双回路预付费</span>
+						</div>
+					</div>
+					<div class="tile bg-red fg-white" data-role="tile">
+						<div class="tile-content iconic">
+							<div class="frames">
+								<img src="img/1.png">
+							</div>
+							<span class="tile-label">风机盘管集控系统</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<footer>
+			<ul class="scrollspy">
+
+			</ul>
+		</footer>
+	</body>
+	<script>
+	</script>
+	<script src="js/osrange.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/knockout-3.4.1.js"></script>
+	<script src="js/validation.js"></script>
+	<script src="js/metro.js"></script>
+	<script src="js/modal.js"></script>
+	<script src="js/colorpicker.js"></script>
+	<script src="js/isotope.pkgd.js"></script>
+	<script src="js/isotope-masonry-horizontal.js"></script>
+	<script src="js/scrollspy.js"></script>
+	<script src="js/koObject.js"></script>
+	<script src="js/smartNode.js"></script>
+
+</html>

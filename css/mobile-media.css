@@ -1,0 +1,46 @@
+@media screen and (max-width: 768px) {
+	body {
+		overflow-y: auto;
+	}
+	h1.header-title {
+		display: none;
+	}
+	div.tile-area {
+		width: auto!important;
+		height: initial!important;
+		overflow: auto;
+		min-width: initial!important;		padding: 0;
+		margin-top: 0;
+		position: absolute;
+		top: 60px;
+		left: 20px;
+		right: 20px;
+	}
+	div.tile-group {
+		width: 100%;
+		height: initial;
+		margin: 0;
+		padding: 0;
+	}
+	div.tile-container {
+		width: 100%!important;
+		height: initial!important;
+	}
+	div.tile-container div.tile {
+		position: initial!important;
+		width: 100%!important;
+		height: 70px!important;
+		margin: 10px 0;
+	}
+	div.tile-container div.tile div.tile-content {
+		position: relative;
+	}
+	div.tile-container div.tile div.tile-content .image-overlay,
+	div.tile-container div.tile div.tile-content .slide-over {
+		/*display: none!important;*/
+	}
+	
+	footer ul li{
+		display: none;
+	}
+}
